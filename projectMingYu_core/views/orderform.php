@@ -11,22 +11,22 @@
         <meta name="author" content="">
     
         <!-- Bootstrap Core CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     
         <!-- MetisMenu CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
     
         <!-- Custom CSS -->
-        <link href="/project/projectMingYu_core/views/dist/css/sb-admin-2.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/dist/css/sb-admin-2.css" rel="stylesheet">
     
         <!-- Custom Fonts -->
-        <link href="/project/projectMingYu_core/views/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/challenges/projectMingYu_core/views/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
         <!-- DataTables CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
 
         <!-- DataTables Responsive CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
         
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,8 +34,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <script src="/project/projectMingYu_core/views/js/jquery.js"></script>
-        <script src="/project/projectMingYu_core/views/js/bootstrap.js"></script>
+        <script src="/challenges/projectMingYu_core/views/js/jquery.js"></script>
+        <script src="/challenges/projectMingYu_core/views/js/bootstrap.js"></script>
     </head>
     
     <body>
@@ -45,8 +45,8 @@
         </div>
         <!--------------功能列---------------->
         <div class="row"> 
-            <form method="post" action="/project/projectMingYu_core/Login/logout">
-                <div class="col-md-2 col-md-offset-3"><h4><a href="/project/projectMingYu_core/Login/calendar">行事曆</a></h4></div>
+            <form method="post" action="/challenges/projectMingYu_core/Login/logout">
+                <div class="col-md-2 col-md-offset-3"><h4><a href="/challenges/projectMingYu_core/Login/calendar">行事曆</a></h4></div>
                 <div class="col-md-2 col-md-offset-3"><h4>使用者身分：<?php echo $data7;?></h4></div>
                 <div class="col-md-2"><button type="submit" class="btn btn-link btn-lg" name="logout">登出</button></div>
             </form>
@@ -92,7 +92,7 @@
                                                     刪除
                                                 </button> 
                                             </td>
-                                            <td><a href="/project/projectMingYu_core/detail/display_detail/<?php echo $display_orderform['orderformID']?>"><?php echo $display_orderform['orderformID']?></a></td>
+                                            <td><a href="/challenges/projectMingYu_core/detail/display_detail/<?php echo $display_orderform['orderformID']?>"><?php echo $display_orderform['orderformID']?></a></td>
                                             <td><?php echo $display_orderform['clientName']?></td>
                                             <td><?php echo $display_orderform['deadline']?></td>
                                             <td><?php echo $display_orderform['total']?></td>
@@ -112,10 +112,10 @@
                                         <?php 
                                             for($i=0;$i<$data5;$i++){
                                                 if($i==$data6){?>    
-                                                    <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="/project/projectMingYu_core/orderform/display_orderform/<?php echo $i ?>"><?php echo $i+1?></a></li>
+                                                    <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="/challenges/projectMingYu_core/orderform/display_orderform/<?php echo $i ?>"><?php echo $i+1?></a></li>
                                                 <?php }
                                                 else{?>
-                                                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="/project/projectMingYu_core/orderform/display_orderform/<?php echo $i ?>"><?php echo $i+1?></a></li>
+                                                    <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="/challenges/projectMingYu_core/orderform/display_orderform/<?php echo $i ?>"><?php echo $i+1?></a></li>
                                                 <?php }
                                         }?>
                                         <!--<li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Next</a></li>-->
@@ -133,7 +133,7 @@
             <div class="modal fade" id="orderformModal<?php echo $show_update_modal['orderformID'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                        <form method="post" action="/project/projectMingYu_core/orderform/update">
+                        <form method="post" action="/challenges/projectMingYu_core/orderform/update">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                 <h4 class="modal-title" id="myModalLabel">修改訂單</h4>
@@ -179,7 +179,7 @@
             <div class="modal fade bs-example-modal-sm" id="deleteOrderform<?php echo $show_delete_modal['orderformID'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <form method="post" action="/project/projectMingYu_core/orderform/delete_orderform">
+                        <form method="post" action="/challenges/projectMingYu_core/orderform/delete_orderform">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                 <h4 class="modal-title" id="myModalLabel">確定刪除此筆訂單嗎？</h4>
@@ -202,7 +202,7 @@
         <div class="modal fade" id="insertOrderform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <form method="post" action="/project/projectMingYu_core/orderform/insert">
+                    <form method="post" action="/challenges/projectMingYu_core/orderform/insert">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                             <h4 class="modal-title" id="myModalLabel">新增訂單</h4>

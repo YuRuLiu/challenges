@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         
         <!-- Custom CSS -->
-        <link href="/project/projectMingYu_core/views/dist/css/sb-admin-2.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/dist/css/sb-admin-2.css" rel="stylesheet">
         
         <title>明昱生命禮儀-登出</title>
         
@@ -15,16 +15,16 @@
         <meta name="author" content="">
     
         <!-- Bootstrap Core CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     
         <!-- MetisMenu CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
     
         <!-- Custom CSS -->
-        <link href="/project/projectMingYu_core/views/dist/css/sb-admin-2.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/dist/css/sb-admin-2.css" rel="stylesheet">
     
         <!-- Custom Fonts -->
-        <link href="/project/projectMingYu_core/views/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/challenges/projectMingYu_core/views/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,7 +47,7 @@
             <div class="col-lg-4">
                 <div class="panel panel-warning">
                     <div class="panel-heading" align="center"> 登出！ </div>
-                    <div class="panel-body" align="center"><p>登入請點<a  href="/project/projectMingYu_core/Login">這裡</a></p></div>   
+                    <div class="panel-body" align="center"><p>登入請點<a  href="/challenges/projectMingYu_core/Login">這裡</a></p></div>   
                 </div>
             </div>
         </div>    

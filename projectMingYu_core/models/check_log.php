@@ -33,7 +33,7 @@
         function defence()
         {
             if($_SESSION['userName'] == NULL)
-                header("location:/project/projectMingYu_core/Login");   
+                header("location:/challenges/projectMingYu_core/Login");   
         }
         
         function name()

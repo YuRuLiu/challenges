@@ -111,7 +111,7 @@
         /*--刷新頁面--*/
         function refresh_detail($orderID,$page)
         {
-            $url = '/project/projectMingYu_core/detail/display_detail/'.$orderID."/".$page; 
+            $url = '/challenges/projectMingYu_core/detail/display_detail/'.$orderID."/".$page; 
             header("refresh: 1;url='$url'");
         }
     }

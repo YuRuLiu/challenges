@@ -10,16 +10,16 @@
         <meta name="author" content="">
     
         <!-- Bootstrap Core CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     
         <!-- MetisMenu CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
     
         <!-- Custom CSS -->
-        <link href="/project/projectMingYu_core/views/dist/css/sb-admin-2.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/dist/css/sb-admin-2.css" rel="stylesheet">
     
         <!-- Custom Fonts -->
-        <link href="/project/projectMingYu_core/views/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/challenges/projectMingYu_core/views/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,7 +38,7 @@
         </div> 
         <!--------------功能列---------------->
         <div class="row">
-            <form method="post" action="/project/projectMingYu_core/Login/logout">
+            <form method="post" action="/challenges/projectMingYu_core/Login/logout">
                 <div class="col-md-2 col-md-offset-3"><h4><a href="../orderform/display_orderform">訂單管理</a></h4></div>
                 <div class="col-md-2 col-md-offset-3"><h4>使用者身分：<?php echo $data1;?></h4></div>
                 <div class="col-md-2"><button type="submit" class="btn btn-link btn-lg" name="logout">登出</button></div>

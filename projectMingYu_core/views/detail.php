@@ -11,22 +11,22 @@
         <meta name="author" content="">
     
         <!-- Bootstrap Core CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     
         <!-- MetisMenu CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
     
         <!-- Custom CSS -->
-        <link href="/project/projectMingYu_core/views/dist/css/sb-admin-2.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/dist/css/sb-admin-2.css" rel="stylesheet">
     
         <!-- Custom Fonts -->
-        <link href="/project/projectMingYu_core/views/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/challenges/projectMingYu_core/views/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
         <!-- DataTables CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
 
         <!-- DataTables Responsive CSS -->
-        <link href="/project/projectMingYu_core/views/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+        <link href="/challenges/projectMingYu_core/views/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
         
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,8 +34,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <script src="/project/projectMingYu_core/views/js/jquery.js"></script>
-        <script src="/project/projectMingYu_core/views/js/bootstrap.js"></script>
+        <script src="/challenges/projectMingYu_core/views/js/jquery.js"></script>
+        <script src="/challenges/projectMingYu_core/views/js/bootstrap.js"></script>
     </head>
     
     <body>
@@ -48,11 +48,11 @@
         <!--------------功能列---------------->
         <div class="container-fluid col-md-offset-3">
             <div class="row">
-                <form method="post" action="/project/projectMingYu_core/Login/logout">
+                <form method="post" action="/challenges/projectMingYu_core/Login/logout">
                     <div class="col-md-3">
-                        <h4><a href="/project/projectMingYu_core/Login/calendar">行事曆</a></h4>
+                        <h4><a href="/challenges/projectMingYu_core/Login/calendar">行事曆</a></h4>
                     </div>
-                    <div class="col-md-3"><h4><a href="/project/projectMingYu_core/orderform/display_orderform">訂單列表</a></h4></div>
+                    <div class="col-md-3"><h4><a href="/challenges/projectMingYu_core/orderform/display_orderform">訂單列表</a></h4></div>
                     <div class="col-md-3"><h4>使用者身分：<?php echo $data11;?></h4></div>
                     <div class="col-md-3"><button type="submit" class="btn btn-link btn-lg" name="logout">登出</button></div>
                 </form>
@@ -117,10 +117,10 @@
                                     <?php 
                                         for($i=0;$i<$data9;$i++){
                                             if($i==$data10){?>    
-                                                <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="/project/projectMingYu_core/detail/display_detail/<?php echo $data1 ?>/<?php echo $i ?>"><?php echo $i+1?></a></li>
+                                                <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="/challenges/projectMingYu_core/detail/display_detail/<?php echo $data1 ?>/<?php echo $i ?>"><?php echo $i+1?></a></li>
                                             <?php }
                                             else{?>
-                                                <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="/project/projectMingYu_core/detail/display_detail/<?php echo $data1 ?>/<?php echo $i ?>"><?php echo $i+1?></a></li>
+                                                <li class="paginate_button" aria-controls="dataTables-example" tabindex="0"><a href="/challenges/projectMingYu_core/detail/display_detail/<?php echo $data1 ?>/<?php echo $i ?>"><?php echo $i+1?></a></li>
                                             <?php }
                                     }?>
                                     <input style="visibility:hidden" name="p" value="<?php echo $detailPage;?>"/>
@@ -137,7 +137,7 @@
             <div class="modal fade" id="myModal<?php echo $show_update_modal['productID'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <form method="post" action="/project/projectMingYu_core/detail/update">
+                        <form method="post" action="/challenges/projectMingYu_core/detail/update">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                 <h4 class="modal-title" id="myModalLabel">修改數量</h4>
@@ -185,7 +185,7 @@
             <div class="modal fade bs-example-modal-sm" id="deleteDetail<?php echo $show_delete_modal['productID'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <form method="post" action="/project/projectMingYu_core/detail/delete_detail">
+                        <form method="post" action="/challenges/projectMingYu_core/detail/delete_detail">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                 <h4 class="modal-title" id="myModalLabel">確定刪除此筆品項嗎？</h4>
@@ -210,7 +210,7 @@
         <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form method="post" action="/project/projectMingYu_core/detail/insert">
+                    <form method="post" action="/challenges/projectMingYu_core/detail/insert">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                             <h4 class="modal-title" id="myModalLabel">新增明細</h4>

@@ -115,7 +115,7 @@
         /*--刷新頁面--*/
         function refresh_orderform()
         {
-            $url = '/project/projectMingYu_core/orderform/display_orderform/'.$orderpage; 
+            $url = '/challenges/projectMingYu_core/orderform/display_orderform/'.$orderpage; 
             header("refresh: 1;url='$url'"); 
         }
     }
