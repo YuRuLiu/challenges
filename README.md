@@ -1,9 +1,9 @@
 # challenges
 
-find_block <br>
+*find_block <br>
     -完成 <br>
     -Bug:當有2個最大區塊時，只能顯示其中1個 <br>
-報名系統v1 <br>
+*報名系統v1 <br>
     ．完成 <br>
         -建立活動報名 <br>
         -報名活動 <br>
