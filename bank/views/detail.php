@@ -58,7 +58,7 @@
                                 </thead>
                                 <!--欄位內容-->
                                 <tbody>
-                                <?php foreach($data1 as $display_detail){?>
+                                <?php foreach ($data1 as $display_detail) {?>
                                     <tr class="odd gradeX">
                                         <td><?php echo $display_detail['detailID'];?></td>
                                         <td><?php echo $display_detail['comeIn'];?></td>

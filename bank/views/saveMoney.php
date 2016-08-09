@@ -46,7 +46,7 @@
                 <div class="panel panel-success">
                     <div class="panel-heading">存入</div>
                     <div class="panel-body">
-                        <form method="post" action="/challenges/bank/account/saveMoney/<?php echo $data1[0]['user'];?>">
+                        <form method="post" action="/challenges/bank/Account/saveMoney/<?php echo $data1[0]['user'];?>">
                             <table>
                                 <tr>
                                     <td><strong>帳戶餘額：</strong></td>

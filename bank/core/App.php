@@ -28,9 +28,7 @@ class App {
             return $url;
         }
         else 
-            header("location:/challenges/bank/account/displayAccount");
+            header("location:/challenges/bank/Account/displayAccount");
     }
     
 }
-
-?>

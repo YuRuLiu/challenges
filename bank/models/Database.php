@@ -14,7 +14,7 @@
             $dsn = sprintf('mysql:dbname=%s;host=%s', static::DATABASE_NAME, static::DATABASE_HOST);
             try {
                 $this->connection = new PDO($dsn, static::DATABASE_USERNAME, static::DATABASE_PASSWORD);
-                $this -> connection -> query('SET NAMES UTF8');
+                $this->connection->query('SET NAMES UTF8');
             } catch (PDOException $e) {
                 echo 'Connection failed: '.$e->getMessage();
             }
@@ -87,17 +87,16 @@
         
         public function transaction()
         {
-            return $this -> connection -> beginTransaction();
+            return $this->connection->beginTransaction();
         }
         
         public function commit()
         {
-            return $this -> connection -> commit();
+            return $this->connection->commit();
         }
         
         public function rollBack()
         {
-            return $this -> connection -> rollBack();
+            return $this->connection->rollBack();
         }
     }
-?>

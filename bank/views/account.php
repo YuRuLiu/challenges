@@ -56,23 +56,23 @@
                                 </thead>
                                 <!--欄位內容-->
                                 <tbody>
-                                <?php foreach($data1 as $display_account){?>
+                                <?php foreach ($data1 as $display_account) {?>
                                     <tr class="odd gradeX">
                                         <td><?php echo $display_account['user'];?></td>
                                         <td><?php echo $display_account['balance'];?></td>
                                         <td>
-                                            <form method="post" action="/challenges/bank/account/displayDetail/<?php echo $display_account['user'];?>">
-                                                <a href="/challenges/bank/account/displayDetail/<?php echo $display_account['user'];?>">
+                                            <form method="post" action="/challenges/bank/Account/displayDetail/<?php echo $display_account['user'];?>">
+                                                <a href="/challenges/bank/Account/displayDetail/<?php echo $display_account['user'];?>">
                                                     <button type="submit" class="btn btn-info" name="detail">明細</button>
                                                 </a>
                                             </form>
-                                            <form method="post" action="/challenges/bank/account/displaySaveMoney/<?php echo $display_account['user'];?>">
-                                                <a href="/challenges/bank/account/displaySaveMoney/<?php echo $display_account['user'];?>">
+                                            <form method="post" action="/challenges/bank/Account/displaySaveMoney/<?php echo $display_account['user'];?>">
+                                                <a href="/challenges/bank/Account/displaySaveMoney/<?php echo $display_account['user'];?>">
                                                     <button type="submit" class="btn btn-success" name="save_money">存款</button>
                                                 </a>
                                             </form>
-                                            <form method="post" action="/challenges/bank/account/displayGetMoney/<?php echo $display_account['user'];?>">
-                                                <a href="/challenges/bank/account/displayGetMoney/<?php echo $display_account['user'];?>">
+                                            <form method="post" action="/challenges/bank/Account/displayGetMoney/<?php echo $display_account['user'];?>">
+                                                <a href="/challenges/bank/Account/displayGetMoney/<?php echo $display_account['user'];?>">
                                                     <button type="submit" class="btn btn-warning" name="get_money">提款</button>
                                                 </a>
                                             </form>

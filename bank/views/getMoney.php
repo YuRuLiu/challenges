@@ -46,7 +46,7 @@
                 <div class="panel panel-warning">
                     <div class="panel-heading">提領</div>
                     <div class="panel-body">
-                        <form method="post" action="/challenges/bank/account/getMoney/<?php echo $data1[0]['user'];?>">
+                        <form method="post" action="/challenges/bank/Account/getMoney/<?php echo $data1[0]['user'];?>">
                             <table>
                                 <tr>
                                     <td><strong>帳戶餘額：</strong></td>

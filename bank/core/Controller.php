@@ -12,5 +12,3 @@ class Controller {
         require_once "../bank/views/$view.php";
     }
 }
-
-?>
