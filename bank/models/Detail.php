@@ -8,28 +8,48 @@ class Detail extends Database
     {
         $sqlSelectDetail = "SELECT `detailID`,`goOut`,`comeIn`,`balance`,`changeTime`
                             FROM `detail`
-                            WHERE `user` = '$user'";
-        $rowSelectDetail = $this->select($sqlSelectDetail);
+                            WHERE `user` = :user";
+        $stmtSelectDetail = $this->prepare($sqlSelectDetail);
 
-        return $rowSelectDetail;
+        $stmtSelectDetail->bindParam(':user', $user, PDO::PARAM_STR);
+
+        $stmtSelectDetail->execute();
+
+        $detail = $stmtSelectDetail->fetchAll();
+
+        return $detail;
     }
 
-    function insertComeIn($user, $detailID, $comeIn, $balance, $changeTime)
+    function insertComeIn($user, $detailId, $comeIn, $balance, $saveTime)
     {
         $sqlInsertComeIn = "INSERT INTO `detail`(`user`,`detailID`,`comeIn`,`balance`,`changeTime`)
-                            VALUES('$user','$detailID','$comeIn','$balance','$changeTime')";
-        $this->insert($sqlInsertComeIn);
+                            VALUES(:user, :detailID, :comeIn, :balance, :changeTime)";
+        $stmtInsertComeIn = $this->prepare($sqlInsertComeIn);
+
+        $stmtInsertComeIn->bindParam(':user', $user, PDO::PARAM_STR);
+        $stmtInsertComeIn->bindParam(':detailID', $detailId, PDO::PARAM_STR);
+        $stmtInsertComeIn->bindParam(':comeIn', $comeIn, PDO::PARAM_INT);
+        $stmtInsertComeIn->bindParam(':balance', $balance, PDO::PARAM_INT);
+        $stmtInsertComeIn->bindParam(':changeTime', $saveTime, PDO::PARAM_STR);
+
+        $stmtInsertComeIn->execute();
     }
 
     function selectDetailId($user)
     {
         $sqlSelectDetailId = "SELECT `detailID`
                               FROM `detail`
-                              WHERE `user` = '$user'
+                              WHERE `user` = :user
                               ORDER BY `detailID` DESC
                               LIMIT 1";
-        $rowSelectDetailId = $this->select($sqlSelectDetailId);
+        $stmtSelectDetailId = $this->prepare($sqlSelectDetailId);
 
-        return $rowSelectDetailId;
+        $stmtSelectDetailId->bindParam(':user', $user, PDO::PARAM_STR);
+
+        $stmtSelectDetailId->execute();
+
+        $detailId = $stmtSelectDetailId->fetchAll();
+
+        return $detailId;
     }
 }

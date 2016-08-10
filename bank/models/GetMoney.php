@@ -11,8 +11,14 @@ class GetMoney extends Database
 
             $sqlSelectAccount = "SELECT `user`,`balance`
                                  FROM `account`
-                                 WHERE `user` = '$user' FOR UPDATE";
-            $account = $this->select($sqlSelectAccount);
+                                 WHERE `user` = :user FOR UPDATE";
+            $stmtSelectAccount = $this->prepare($sqlSelectAccount);
+
+            $stmtSelectAccount->bindParam(':user', $user, PDO::PARAM_STR);
+
+            $stmtSelectAccount->execute();
+
+            $account = $stmtSelectAccount->fetchAll();
 
             if (isset($btnGetMoney)) {
                 if ($account[0]['balance'] >= $goOut) {
@@ -22,12 +28,25 @@ class GetMoney extends Database
                     $getTime = date("Y-m-d h:i:sa");
 
                     $sqlInsertGoOut = "INSERT INTO `detail`(`user`,`detailID`,`goOut`,`balance`,`changeTime`)
-                                       VALUES('$user','$detailId','$goOut','$balanceNew','$getTime')";
-                    $this->insert($sqlInsertGoOut);
+                                       VALUES(:user, :detailID, :goOut, :balance, :changeTime)";
+                    $stmtInsertGoOut = $this->prepare($sqlInsertGoOut);
 
-                    $sqlUpdateBalance = "UPDATE `account` SET `balance` = '$balanceNew'
-                                         WHERE `user` = '$user'";
-                    $this->update($sqlUpdateBalance);
+                    $stmtInsertGoOut->bindParam(':user', $user, PDO::PARAM_STR);
+                    $stmtInsertGoOut->bindParam(':detailID', $detailId, PDO::PARAM_STR);
+                    $stmtInsertGoOut->bindParam(':goOut', $goOut, PDO::PARAM_INT);
+                    $stmtInsertGoOut->bindParam(':balance', $balanceNew, PDO::PARAM_INT);
+                    $stmtInsertGoOut->bindParam(':changeTime', $getTime, PDO::PARAM_STR);
+
+                    $stmtInsertGoOut->execute();
+
+                    $sqlUpdateBalance = "UPDATE `account` SET `balance` = :balance
+                                         WHERE `user` = :user";
+                    $stmtUpdateBalance = $this->prepare($sqlUpdateBalance);
+
+                    $stmtUpdateBalance->bindParam(':user', $user, PDO::PARAM_STR);
+                    $stmtUpdateBalance->bindParam(':balance', $balanceNew, PDO::PARAM_INT);
+
+                    $stmtUpdateBalance->execute();
 
                     $this->commit();
 

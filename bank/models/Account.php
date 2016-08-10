@@ -17,16 +17,27 @@ class Account extends Database
     {
         $sqlSelectAccount = "SELECT `user`,`balance`
                              FROM `account`
-                             WHERE `user` = '$user'";
-        $rowSelectAccount = $this->select($sqlSelectAccount);
+                             WHERE `user` = :user";
+        $stmtSelectAccount = $this->prepare($sqlSelectAccount);
 
-        return $rowSelectAccount;
+        $stmtSelectAccount->bindParam(':user', $user, PDO::PARAM_STR);
+
+        $stmtSelectAccount->execute();
+
+        $account = $stmtSelectAccount->fetchAll();
+
+        return $account;
     }
 
     function updateBalance($user, $balanceNew)
     {
-        $sqlUpdateBalance = "UPDATE `account` SET `balance` = '$balanceNew'
-                             WHERE `user` = '$user'";
-        $this->update($sqlUpdateBalance);
+        $sqlUpdateBalance = "UPDATE `account` SET `balance` = :balance
+                             WHERE `user` = :user";
+        $stmtUpdateBalance = $this->prepare($sqlUpdateBalance);
+
+        $stmtUpdateBalance->bindParam(':user', $user, PDO::PARAM_STR);
+        $stmtUpdateBalance->bindParam(':balance', $balanceNew, PDO::PARAM_INT);
+
+        $stmtUpdateBalance->execute();
     }
 }

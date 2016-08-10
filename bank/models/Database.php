@@ -104,4 +104,9 @@ class Database
     {
         return $this->connection->rollBack();
     }
+
+    public function prepare($sql)
+    {
+        return $this->connection->prepare($sql);
+    }
 }
