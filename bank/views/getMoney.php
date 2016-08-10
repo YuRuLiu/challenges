@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
     <head>
-        
+
         <title>提領</title>
-        
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-    
+
         <!-- Bootstrap Core CSS -->
         <link href="/challenges/bank/views/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
         <!-- MetisMenu CSS -->
         <link href="/challenges/bank/views/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-    
+
         <!-- Custom CSS -->
         <link href="/challenges/bank/views/dist/css/sb-admin-2.css" rel="stylesheet">
-    
+
         <!-- Custom Fonts -->
         <link href="/challenges/bank/views/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -27,7 +27,7 @@
 
         <!-- DataTables Responsive CSS -->
         <link href="/challenges/bank/views/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
-        
+
         <link rel="stylesheet" type="text/css" href="/challenges/bank/views/dist/css/jquery.datetimepicker.css"/>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,9 +37,9 @@
         <![endif]-->
         <script src="/challenges/bank/views/js/jquery.js"></script>
         <script src="/challenges/bank/views/js/bootstrap.js"></script>
-    
+
     </head>
-    
+
     <body>
         <div class="row">
             <div class="col-lg-7 col-md-offset-3">
@@ -60,10 +60,10 @@
                                     <td></td>
                                     <td></td>
                                     <td>
-                                        <input type="submit" class="btn btn-success" value="提領" name="getInsert">    
+                                        <input type="submit" class="btn btn-success" value="提領" name="btnGetMoney">
                                     </td>
                                     <td>
-                                        <input type="reset" class="btn btn-outline btn-primary" value="清除">    
+                                        <input type="reset" class="btn btn-outline btn-primary" value="清除">
                                     </td>
                                 </tr>
                             </table>

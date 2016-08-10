@@ -4,34 +4,34 @@ require_once("Database.php");
 class GetMoney extends Database
 {
     // 提款
-    function getMoneyModel($user, $getInsert, $goOut, $plusDetailID)
+    function getMoneyModel($user, $btnGetMoney, $goOut, $detailId)
     {
         try{
             $this->transaction();
 
-            $balance = "SELECT `user`,`balance`
-                        FROM `account`
-                        WHERE `user` = '$user' FOR UPDATE";
-            $display_balance = $this->select($balance);
+            $sqlSelectAccount = "SELECT `user`,`balance`
+                                 FROM `account`
+                                 WHERE `user` = '$user' FOR UPDATE";
+            $account = $this->select($sqlSelectAccount);
 
-            if (isset($getInsert)) {
-                if ($display_balance[0]['balance'] >= $goOut) {
-                    $balance_new = $display_balance[0]['balance']-$goOut;
+            if (isset($btnGetMoney)) {
+                if ($account[0]['balance'] >= $goOut) {
+                    $balanceNew = $account[0]['balance'] - $goOut;
 
                     date_default_timezone_set('Asia/Taipei');
-                    $changeTime = date("Y-m-d h:i:sa");
+                    $getTime = date("Y-m-d h:i:sa");
 
-                    $insert_goOut = "INSERT INTO `detail`(`user`,`detailID`,`goOut`,`balance`,`changeTime`)
-                                     VALUES('$user','$plusDetailID','$goOut','$balance_new','$changeTime')";
-                    $this->insert($insert_goOut);
+                    $sqlInsertGoOut = "INSERT INTO `detail`(`user`,`detailID`,`goOut`,`balance`,`changeTime`)
+                                       VALUES('$user','$detailId','$goOut','$balanceNew','$getTime')";
+                    $this->insert($sqlInsertGoOut);
 
-                    $update_balance = "UPDATE `account` SET `balance` = '$balance_new'
-                                       WHERE `user` = '$user'";
-                    $this->update($update_balance);
+                    $sqlUpdateBalance = "UPDATE `account` SET `balance` = '$balanceNew'
+                                         WHERE `user` = '$user'";
+                    $this->update($sqlUpdateBalance);
 
                     $this->commit();
 
-                    $url = $display_balance[0]['user'];
+                    $url = $account[0]['user'];
                     header("location:/challenges/bank/Account/displayDetail/$url");
                 } else {
                     header("location:/challenges/bank/Account/getFail");
