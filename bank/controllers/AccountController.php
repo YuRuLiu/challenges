@@ -48,24 +48,8 @@ class AccountController extends Controller
 
         $detailId = $this->incrementDetailId($user);
 
-        $account = $this->model("Account");
-        $balance = $account->selectAccount($user);
-        $balanceNew = $balance[0]['balance'] + $comeIn;
-
-        // 設置時區
-        date_default_timezone_set('Asia/Taipei');
-        $saveTime = date("Y-m-d h:i:sa");
-
-        if (isset($btnSaveMoney)) {
-            $detail = $this->model("Detail");
-            $detail->insertComeIn($user, $detailId, $comeIn, $balanceNew, $saveTime);
-
-            $account->updateBalance($user, $balanceNew);
-
-            $url = $balance[0]['user'];
-            header("location:/challenges/bank/Account/displayDetail/$url");
-        }
-
+        $saveMoney = $this->model("ChangeMoney");
+        $saveMoney->saveMoneyModel($user, $btnSaveMoney, $comeIn, $detailId);
     }
 
     // 提款
@@ -76,7 +60,7 @@ class AccountController extends Controller
 
         $detailId = $this->incrementDetailId($user);
 
-        $getMoney = $this->model("GetMoney");
+        $getMoney = $this->model("ChangeMoney");
         $getMoney->getMoneyModel($user, $btnGetMoney, $goOut, $detailId);
     }
 

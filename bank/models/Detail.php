@@ -20,21 +20,6 @@ class Detail extends Database
         return $detail;
     }
 
-    function insertComeIn($user, $detailId, $comeIn, $balance, $saveTime)
-    {
-        $sqlInsertComeIn = "INSERT INTO `detail`(`user`,`detailID`,`comeIn`,`balance`,`changeTime`)
-                            VALUES(:user, :detailID, :comeIn, :balance, :changeTime)";
-        $stmtInsertComeIn = $this->prepare($sqlInsertComeIn);
-
-        $stmtInsertComeIn->bindParam(':user', $user, PDO::PARAM_STR);
-        $stmtInsertComeIn->bindParam(':detailID', $detailId, PDO::PARAM_STR);
-        $stmtInsertComeIn->bindParam(':comeIn', $comeIn, PDO::PARAM_INT);
-        $stmtInsertComeIn->bindParam(':balance', $balance, PDO::PARAM_INT);
-        $stmtInsertComeIn->bindParam(':changeTime', $saveTime, PDO::PARAM_STR);
-
-        $stmtInsertComeIn->execute();
-    }
-
     function selectDetailId($user)
     {
         $sqlSelectDetailId = "SELECT `detailID`

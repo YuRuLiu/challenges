@@ -28,16 +28,4 @@ class Account extends Database
 
         return $account;
     }
-
-    function updateBalance($user, $balanceNew)
-    {
-        $sqlUpdateBalance = "UPDATE `account` SET `balance` = :balance
-                             WHERE `user` = :user";
-        $stmtUpdateBalance = $this->prepare($sqlUpdateBalance);
-
-        $stmtUpdateBalance->bindParam(':user', $user, PDO::PARAM_STR);
-        $stmtUpdateBalance->bindParam(':balance', $balanceNew, PDO::PARAM_INT);
-
-        $stmtUpdateBalance->execute();
-    }
 }
