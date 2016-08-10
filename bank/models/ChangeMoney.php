@@ -3,7 +3,6 @@ require_once("Database.php");
 
 class ChangeMoney extends Database
 {
-    // 提款
     function getMoneyModel($user, $btnGetMoney, $goOut, $detailId)
     {
         try{
@@ -27,7 +26,7 @@ class ChangeMoney extends Database
                     date_default_timezone_set('Asia/Taipei');
                     $getTime = date("Y-m-d h:i:sa");
 
-                    //修改帳戶餘額
+
                     $sqlUpdateBalance = "UPDATE `account` SET `balance` = :balance
                                          WHERE `user` = :user";
                     $stmtUpdateBalance = $this->prepare($sqlUpdateBalance);
@@ -37,7 +36,7 @@ class ChangeMoney extends Database
 
                     $stmtUpdateBalance->execute();
 
-                    //新增帳戶明細
+
                     $sqlInsertGoOut = "INSERT INTO `detail`(`user`,`detailID`,`goOut`,`balance`,`changeTime`)
                                        VALUES(:user, :detailID, :goOut, :balance, :changeTime)";
                     $stmtInsertGoOut = $this->prepare($sqlInsertGoOut);
@@ -50,24 +49,21 @@ class ChangeMoney extends Database
 
                     $stmtInsertGoOut->execute();
 
-                    // commit
+
                     $this->commit();
 
-                    // 導至明細頁
+
                     $url = $account[0]['user'];
                     header("location:/challenges/bank/Account/displayDetail/$url");
-                } else {
-                    header("location:/challenges/bank/Account/getFail");
                 }
 
+                header("location:/challenges/bank/Account/getFail");
             }
-
         } catch (Exception $e) {
             $this->rollback();
         }
-
     }
-    // 存款
+
     function saveMoneyModel($user, $btnSaveMoney, $comeIn, $detailId)
     {
         try{
@@ -90,7 +86,6 @@ class ChangeMoney extends Database
                 date_default_timezone_set('Asia/Taipei');
                 $saveTime = date("Y-m-d h:i:sa");
 
-                // 更新帳戶餘額
                 $sqlUpdateBalance = "UPDATE `account` SET `balance` = :balance
                                      WHERE `user` = :user";
                 $stmtUpdateBalance = $this->prepare($sqlUpdateBalance);
@@ -100,7 +95,6 @@ class ChangeMoney extends Database
 
                 $stmtUpdateBalance->execute();
 
-                // 新增明細
                 $sqlInsertComeIn = "INSERT INTO `detail`(`user`,`detailID`,`comeIn`,`balance`,`changeTime`)
                                     VALUES(:user, :detailID, :comeIn, :balance, :changeTime)";
                 $stmtInsertComeIn = $this->prepare($sqlInsertComeIn);
@@ -113,14 +107,11 @@ class ChangeMoney extends Database
 
                 $stmtInsertComeIn->execute();
 
-                // commit
                 $this->commit();
 
-                // 導至明細頁
                 $url = $account[0]['user'];
                 header("location:/challenges/bank/Account/displayDetail/$url");
             }
-
         } catch (Exception $e) {
             $this->rollback();
         }

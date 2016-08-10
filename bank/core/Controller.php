@@ -9,7 +9,7 @@ class Controller
         return new $model();
     }
 
-    public function view($view, $data1 = Array())
+    public function view($view, $data1 = array())
     {
         require_once "../bank/views/$view.php";
     }

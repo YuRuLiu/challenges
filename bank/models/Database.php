@@ -21,6 +21,7 @@ class Database
         }
 
     }
+
     /**
      * Execute select query
      *
@@ -33,6 +34,7 @@ class Database
 
         return $statement->fetchAll();
     }
+
     /**
      * Execute update query
      *
@@ -43,6 +45,7 @@ class Database
     {
         return $this->exec($sql);
     }
+
     /**
      * Execute insert query
      *
@@ -60,6 +63,7 @@ class Database
             return false;
         }
     }
+
     /**
      * Execute delete query
      *
@@ -70,6 +74,7 @@ class Database
     {
         return $this->exec($sql);
     }
+
     /**
      * Last insert id
      *
@@ -79,6 +84,7 @@ class Database
     {
         return (int)$this->connection->lastInsertId();
     }
+
     /**
      * Execute any SQL query
      *
