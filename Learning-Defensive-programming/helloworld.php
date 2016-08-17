@@ -2,12 +2,8 @@
 /**
  * A PHP daemon demo file.
  *
- * @author     Asika
- * @email      asika@asikart.com
- * @date       2013-10-12
+ * @reference:http://asika.windspeaker.co/post/3494-php-daemon-unix-signal
  *
- * @copyright  Copyright (C) 2013 - Asika.
- * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
 /**
