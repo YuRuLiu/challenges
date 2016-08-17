@@ -102,13 +102,16 @@ class DaemonSignalListener
      */
     protected function registerSignalHandler()
     {
-        $this->addLog('registerHendler');
+        $pid = file_get_contents($this->pidFile);
+        $this->addLog('registerHendler' . "-PID = " . $pid);
 
         pcntl_signal(SIGINT, array($this, 'shutdown'));
 
         pcntl_signal(SIGTERM, array($this, 'shutdown'));
 
         pcntl_signal(SIGUSR1, array($this, 'customSignal'));
+
+        pcntl_signal(SIGUSR2, array($this, 'testSignal'));
     }
 
     /**
@@ -140,9 +143,8 @@ class DaemonSignalListener
      */
     public function shutdown($signal)
     {
-        $this->addLog('Shutdown by signal: ' . $signal);
-
         $pid = file_get_contents($this->pidFile);
+        $this->addLog('Shutdown by signal: ' . $signal . " -PID = " . $pid);
 
         // Remove the process id file.
         @ unlink($this->pidFile);
@@ -158,7 +160,19 @@ class DaemonSignalListener
      */
     public function customSignal($signal)
     {
-        $this->addLog('Execute custom signal: ' . $signal);
+        $pid = file_get_contents($this->pidFile);
+        $this->addLog('Execute custom signal: ' . $signal . "-PID = " .$pid);
+    }
+
+    /**
+     * Hendle the SIGUSR2 signal.
+     *
+     * @param   integer  $signal  The received POSIX signal.
+     */
+    public function testSignal($signal)
+    {
+        $pid = file_get_contents($this->pidFile);
+        $this->addLog('sigusr2: ' . $signal . "-PID = " .$pid);
     }
 
     /**
