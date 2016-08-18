@@ -9,3 +9,12 @@ Shutdown by signal: 15 - 2016-08-17 03:02:20
 Daemonized - 2016-08-17 03:04:01
 registerHendler-PID = 4333 - 2016-08-17 03:04:01
 Shutdown by signal: 15 -PID = 4333 - 2016-08-17 03:04:17
+Daemonized - 2016-08-17 06:11:50
+registerHendler-PID = 8695 - 2016-08-17 06:11:50
+Daemonized - 2016-08-17 06:12:24
+registerHendler-PID = 8710 - 2016-08-17 06:12:24
+Shutdown by signal: 15 -PID = 8710 - 2016-08-17 06:13:14
+Shutdown by signal: 15 -PID =  - 2016-08-17 06:17:25
+Daemonized - 2016-08-17 06:18:01
+registerHendler-PID = 8773 - 2016-08-17 06:18:01
+Shutdown by signal: 15 -PID = 8773 - 2016-08-17 06:18:22
