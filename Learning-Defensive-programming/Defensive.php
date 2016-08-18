@@ -99,6 +99,7 @@ function insertEvent($eventID, $eventName, $content, $bring, $signupDate, $deadl
     $stmtInsertEvent->bindParam(':deadline', $deadline, PDO::PARAM_STR);
 
     $rowEffect = $stmtInsertEvent->execute();
+
     return $rowEffect;
 }
 
@@ -117,12 +118,11 @@ function increment_eventID()
     date_default_timezone_set('Asia/Taipei');
     $now = date("Ymd");
 
-    if($now == $eventDate)
-    {
+    if ($now == $eventDate) {
        $plusEventNum = $eventNum + 1;
        $plusEventNum = str_pad($plusEventNum,3,'0',STR_PAD_LEFT);
        return $now.$plusEventNum;
-    }
-    else
+    } else {
         return $now."001";
+    }
 }
