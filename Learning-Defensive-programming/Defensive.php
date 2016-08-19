@@ -79,7 +79,7 @@ function compareDate($date1, $date2)
         return $date;
     }
 
-    echo '截止報名日期不可以晚於開始報名日期！';
+    echo '截止報名日期不可以早於開始報名日期！';
     exit();
 }
 
